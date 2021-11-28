@@ -1,14 +1,5 @@
 import { Image } from "@chakra-ui/image";
-import {
-  Table,
-  TableCaption,
-  Tr,
-  Th,
-  Td,
-  Tbody,
-  Thead,
-  Tfoot,
-} from "@chakra-ui/table";
+import { Table, Tr, Th, Td, Tbody, Thead } from "@chakra-ui/table";
 
 function StockTable() {
   const stocks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -24,8 +15,8 @@ function StockTable() {
         </Tr>
       </Thead>
       <Tbody>
-        {stocks.map((stock) => (
-          <Tr>
+        {stocks.map((stock, index) => (
+          <Tr key={index}>
             <Td>Yes Bank</Td>
             <Td>34.60</Td>
             <Td display="flex" color="red">
