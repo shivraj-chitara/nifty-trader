@@ -23,7 +23,13 @@ function App() {
 
       {/* Stock data */}
       <Box width="100%">
-        <SimpleGrid columns={3} spacing={10} width="70%" margin="auto" mt="10">
+        <SimpleGrid
+          columns={{ sm: 1, lg: 3 }}
+          spacing={10}
+          width="70%"
+          margin="auto"
+          mt="10"
+        >
           {STOCK_DATA.map((stock, index) => (
             <StockCard
               name={stock.name}
@@ -42,50 +48,56 @@ function App() {
       </Box>
 
       {/* Stock table */}
-      <Box width="70%" margin=" auto" my="20">
-        <Center borderBottom="1px" borderColor="#E2E5ED" my="5">
-          <HStack spacing="10" fontSize="16px">
-            <Box>
-              <Text
-                borderBottom="2px"
-                borderColor="#2196F3"
-                py="5"
-                color="#2196F3"
-              >
-                Trending Stocks
-              </Text>
-            </Box>
-            <Box>
-              <Text>Most Active</Text>
-            </Box>
-            <Box>
-              <Text>Top Gainers</Text>
-            </Box>
-            <Box>
-              <Text>Top Losers</Text>
-            </Box>
-          </HStack>
-        </Center>
-        <StockTable />
-        <Center mt="10">
-          <Button
-            bg="white"
-            border="1px"
-            borderColor="#E2E5ED"
-            color="#2196F3"
-            fontWeight="500"
-            fontSize="14"
-            borderRadius="none"
-            px="8"
-          >
-            View more stocks
-            <Image src="/img/rightarrow.png" pl="5" />
-          </Button>
-        </Center>
+      <Box width="100%">
+        <Box width="70%" margin=" auto" mt="20">
+          <Center borderBottom="1px" borderColor="#E2E5ED" my="5">
+            <HStack spacing="10" fontSize="16px">
+              <Box>
+                <Text
+                  borderBottom="2px"
+                  borderColor="#2196F3"
+                  py="5"
+                  color="#2196F3"
+                >
+                  Trending Stocks
+                </Text>
+              </Box>
+              <Box>
+                <Text>Most Active</Text>
+              </Box>
+              <Box>
+                <Text>Top Gainers</Text>
+              </Box>
+              <Box>
+                <Text>Top Losers</Text>
+              </Box>
+            </HStack>
+          </Center>
+        </Box>
+
+        <Box width={{ base: "100%", lg: "70%" }} margin=" auto" mb="20">
+          <StockTable />
+
+          <Center mt="10">
+            <Button
+              bg="white"
+              border="1px"
+              borderColor="#E2E5ED"
+              color="#2196F3"
+              fontWeight="500"
+              fontSize="14"
+              borderRadius="none"
+              px="8"
+            >
+              View more stocks
+              <Image src="/img/rightarrow.png" pl="5" />
+            </Button>
+          </Center>
+        </Box>
       </Box>
 
       {/* Watchlist */}
-      <Box bg="#f4f7fa" width="100%" py="5">
+      <Box bg="#f4f7fa" width="100%" py="10">
         <Box width="70%" margin="auto">
           <Text fontSize="25px" fontWeight="700" color="#0F2137">
             Watchlist

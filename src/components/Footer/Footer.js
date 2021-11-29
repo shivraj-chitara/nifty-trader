@@ -2,7 +2,15 @@ import React from "react";
 import { Button } from "@chakra-ui/button";
 import { Image } from "@chakra-ui/image";
 import { Input, InputGroup, InputLeftElement } from "@chakra-ui/input";
-import { Box, Center, Flex, HStack, Stack, Text } from "@chakra-ui/layout";
+import {
+  Box,
+  Center,
+  Flex,
+  HStack,
+  SimpleGrid,
+  Stack,
+  Text,
+} from "@chakra-ui/layout";
 import { EmailIcon } from "@chakra-ui/icons";
 import { ALPHABETS } from "../../config/Constants";
 
@@ -10,7 +18,7 @@ function Footer() {
   return (
     <Box width="100%" bg="#0B1426">
       <Box width="70%" margin="auto">
-        <Center>
+        <Center display={{ base: "none", lg: "block" }}>
           <HStack color="#adb5bd" py="10" margin="auto">
             {ALPHABETS.map((item, index) => (
               <Center key={index} bg="#172031" boxSize="8" borderRadius="3px">
@@ -25,8 +33,9 @@ function Footer() {
           borderTop="1px"
           borderColor="#E2E5ED"
           py="10"
+          direction={{ base: "column", lg: "row" }}
         >
-          <Stack width="300px" spacing="5">
+          <Stack width="300px" spacing="5" py="5">
             <Box>
               <Image src="/img/footer-logo.png" />
             </Box>
@@ -70,7 +79,11 @@ function Footer() {
             </HStack>
           </Stack>
 
-          <Stack direction="row" spacing="16" color="#ADB5BD">
+          <SimpleGrid
+            columns={{ sm: 2, md: 2, lg: 4 }}
+            spacing={{ base: 8, lg: 16 }}
+            color="#ADB5BD"
+          >
             <Stack>
               <Text fontSize="16px" fontWeight="500" pb="2" color="#FEFEFE">
                 Top 5 Brokers
@@ -125,7 +138,7 @@ function Footer() {
                 Subscribe
               </Button>
             </Stack>
-          </Stack>
+          </SimpleGrid>
         </Flex>
       </Box>
       <Center
@@ -137,7 +150,7 @@ function Footer() {
         zIndex="5"
       >
         <Text>
-          <span style={{ color: "#2196f3" }}>Copyright © Niftytrader.</span>
+          <span style={{ color: "#2196f3" }}>Copyright © Niftytrader. </span>
           All rights reserved
         </Text>
       </Center>

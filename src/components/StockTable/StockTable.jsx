@@ -4,7 +4,11 @@ import { Table, Tr, Th, Td, Tbody, Thead } from "@chakra-ui/table";
 function StockTable() {
   const stocks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return (
-    <Table>
+    <Table
+      display={{ base: "block", lg: "table" }}
+      overflowX="scroll"
+      whiteSpace="nowrap"
+    >
       <Thead bg="#f4f7fa">
         <Tr>
           <Th>Sumbol</Th>
